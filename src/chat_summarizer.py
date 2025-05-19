@@ -51,13 +51,6 @@ class ChatSummarizer:
     def get_message_statistics(self, user_messages: List[str], ai_messages: List[str]) -> Dict:
         """
         Calculate basic statistics about the chat.
-        
-        Args:
-            user_messages (List[str]): List of user messages
-            ai_messages (List[str]): List of AI messages
-            
-        Returns:
-            Dict: Dictionary containing message statistics
         """
         return {
             'total_messages': len(user_messages) + len(ai_messages),
@@ -68,13 +61,6 @@ class ChatSummarizer:
     def extract_keywords(self, messages: List[str], top_n: int = 5) -> List[Tuple[str, int]]:
         """
         Extract the most frequent keywords from messages.
-        
-        Args:
-            messages (List[str]): List of messages to analyze
-            top_n (int): Number of top keywords to return
-            
-        Returns:
-            List[Tuple[str, int]]: List of (keyword, frequency) tuples
         """
         # Combine all messages and tokenize
         text = ' '.join(messages).lower()
@@ -91,12 +77,6 @@ class ChatSummarizer:
     def process_multiple_files(self, directory: str) -> Dict[str, Dict]:
         """
         Process all chat log files in a directory.
-        
-        Args:
-            directory (str): Path to directory containing chat log files
-            
-        Returns:
-            Dict[str, Dict]: Dictionary mapping filenames to their statistics
         """
         results = {}
         try:
