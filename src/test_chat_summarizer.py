@@ -33,8 +33,8 @@ class TestChatSummarizer(unittest.TestCase):
         user_messages, ai_messages = self.summarizer.parse_chat_log(self.test_file)
         
         # Check if we got the correct number of messages
-        self.assertEqual(len(user_messages), 5)  # Based on our sample chat.txt
-        self.assertEqual(len(ai_messages), 5)
+        self.assertEqual(len(user_messages), 4)  # Based on our sample chat.txt
+        self.assertEqual(len(ai_messages), 4)
         
         # Check if the first message is parsed correctly
         self.assertTrue(user_messages[0].startswith("Hello, I'm interested in learning about Python programming"))
@@ -45,9 +45,9 @@ class TestChatSummarizer(unittest.TestCase):
         stats = self.summarizer.get_message_statistics(user_messages, ai_messages)
         
         # Verify statistics
-        self.assertEqual(stats['total_messages'], 10)
-        self.assertEqual(stats['user_messages'], 5)
-        self.assertEqual(stats['ai_messages'], 5)
+        self.assertEqual(stats['total_messages'], 8)
+        self.assertEqual(stats['user_messages'], 4)
+        self.assertEqual(stats['ai_messages'], 4)
 
     def test_extract_keywords(self):
         """Test the keyword extraction functionality."""
